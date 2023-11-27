@@ -1,0 +1,6 @@
+*.terraform
+*terraform
+terraform*
+main.tf
+work-key
+work-key.pub
