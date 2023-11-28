@@ -13,7 +13,6 @@ jobs:
     
       - name: checks out the repository
         uses: actions/checkout@v4
-        id: "make_request"
       
       - name: Make HTTP request
         uses: fjogeleit/http-request-action@v1
@@ -21,10 +20,6 @@ jobs:
           url: 'http://api.exchangeratesapi.io/v1/latest?access_key=${{ secrets.API_KEY }}&symbols=USD,AUD,CAD,PLN,MON'
           method: GET
           customHeader: '{"Content-Type": "application/json"}'
-
-      - name: Show Request response
-        run:  |
-          echo ${{ fromJson(steps.make_request.outputs.response).rates.USD }}     
 
 
       - name: "Logs into docker"
