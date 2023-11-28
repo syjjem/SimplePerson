@@ -13,6 +13,7 @@ jobs:
     
       - name: checks out the repository
         uses: actions/checkout@v4
+        id: "make_request"
       
       - name: Make HTTP request
         uses: fjogeleit/http-request-action@v1
