@@ -17,7 +17,7 @@ jobs:
       - name: Make HTTP request
         uses: fjogeleit/http-request-action@v1
         with: 
-          url: 'http://api.exchangeratesapi.io/v1/latest?access_key=${{ secrets.API KEY }}&symbols=USD,AUD,CAD,PLN,MON'
+          url: 'http://api.exchangeratesapi.io/v1/latest?access_key=${{ secrets.API_KEY }}&symbols=USD,AUD,CAD,PLN,MON'
           method: GET
           customHeader: '{"Content-Type": "application/json"}'
 
