@@ -21,6 +21,10 @@ jobs:
           method: GET
           customHeader: '{"Content-Type": "application/json"}'
 
+      - name: Show Request response
+        run:  |
+          echo ${{ fromJson(steps.make_request.outputs.response).rates.USD }}     
+
 
       - name: "Logs into docker"
         uses: docker/login-action@v3
